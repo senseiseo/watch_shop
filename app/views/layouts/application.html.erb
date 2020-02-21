@@ -5,11 +5,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'bootstrap', media: 'all '%>
+    <%= stylesheet_link_tag 'flexslider', media: 'all '%>
+    <%= stylesheet_link_tag 'memenu', media: 'all '%>
+    <%= stylesheet_link_tag 'style', media: 'all '%>
+    <%= stylesheet_link_tag 'mystyle', media: 'all '%>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="content">
     <%= yield %>
+    </div>
   </body>
 </html>
