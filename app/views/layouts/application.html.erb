@@ -10,14 +10,17 @@
     <%= stylesheet_link_tag 'memenu', media: 'all '%>
     <%= stylesheet_link_tag 'style', media: 'all '%>
     <%= stylesheet_link_tag 'mystyle', media: 'all '%>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="widht=device-widht, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   </head>
 
   <body>
     <div class="content">
-    <%= yield %>
+      <%= yield %>
     </div>
+
+
+
+    <script src="<%= asset_path 'application' %>"></script>
   </body>
 </html>
