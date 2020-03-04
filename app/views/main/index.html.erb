@@ -39,4 +39,25 @@
     </div>
    </div>
 <!--about-end -->
+<% end %>
 
+<% if @hits.nil? %>
+  <h2> no brands</h2>
+<% else %>
+  <!-- product-starts -->
+  <div class="product">
+    <div class="container">
+      <div class="product-top">
+        <div classs="product-one">
+          <% @hits.hit.each do |hit|%>
+          <div class="col-md-3 product-left">
+            <div class="product-main simpleCart_shelfItem">
+              <a href="product/<%= hit.id %>" class="mask">
+                <%= image_tag(hit.img, alt: "", class: "img-responsive zoom-img") %>
+              </a>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
