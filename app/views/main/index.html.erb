@@ -1,6 +1,42 @@
-<ul>
-    <li> @brands = <%= @brands.to_a%> </li>
-</ul>
-<ul> 
-   <li> @hits   = <%= @hits.to_a%>  </li>
-</ul>
+<-- banner start -->
+<div class="bnr" id="home">
+  <div id="top" class="callbacks_container">
+    <ul class="rslides" id="slider4">
+      <li>
+        <%= image_tag("bnr-1.jpg", alt: "") %>
+      </li>
+      <li>
+        <%= image_tag("bnr-2.jpg", alt: "") %>
+      </li>
+      <li>
+        <%= image_tag("bnr-3.jpg", alt: "") %>
+      </li>
+    </ul> 
+  </div>
+  <div class="clearfix"> </div>
+</div>
+<!-- banner-end -->
+<% if @brands.nil? %>
+ <h2> no brands </h2>
+ <% else %>
+   <!--about-starts -->
+   <div class="about">
+    <div class="container">
+      <div class="about-top grid-1">
+        <% @brands.each do |i|%>
+        <div class="col-md-4 about-left">
+          <figure class="effect-bubba">
+           <%= image_tag(i.img. alt: "", class: "img-responsive" ) %>
+             <figcaption>
+               <h2> <%= i.title %> </h2>
+               <p><%= i.description %> </p>
+             </figcaption>
+           </figure>
+         </div>
+        <% end %>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+   </div>
+<!--about-end -->
+
