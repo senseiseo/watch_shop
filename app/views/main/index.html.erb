@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 <!-- banner-starts -->
+=======
+<-- banner start -->
+>>>>>>> master
 <div class="bnr" id="home">
   <div id="top" class="callbacks_container">
     <ul class="rslides" id="slider4">
       <li>
+<<<<<<< HEAD
         <%= image_tag("bnr-1.jpg", alt: "" ) %>
       </li>
       <li>
@@ -86,3 +91,63 @@
   
  <!-- <input type="hidden" value="<%= !current_user.nil? ? 88 : 99  %>" id="cart_access" /> -->
   <!--product-end-->
+=======
+        <%= image_tag("bnr-1.jpg", alt: "") %>
+      </li>
+      <li>
+        <%= image_tag("bnr-2.jpg", alt: "") %>
+      </li>
+      <li>
+        <%= image_tag("bnr-3.jpg", alt: "") %>
+      </li>
+    </ul> 
+  </div>
+  <div class="clearfix"> </div>
+</div>
+<!-- banner-end -->
+<% if @brands.nil? %>
+ <h2> no brands </h2>
+ <% else %>
+   <!--about-starts -->
+   <div class="about">
+    <div class="container">
+      <div class="about-top grid-1">
+        <% @brands.each do |i|%>
+        <div class="col-md-4 about-left">
+          <figure class="effect-bubba">
+           <%= image_tag(i.img. alt: "", class: "img-responsive" ) %>
+             <figcaption>
+               <h2> <%= i.title %> </h2>
+               <p><%= i.description %> </p>
+             </figcaption>
+           </figure>
+         </div>
+        <% end %>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+   </div>
+<!--about-end -->
+<% end %>
+
+<% if @hits.nil? %>
+  <h2> no brands</h2>
+<% else %>
+  <!-- product-starts -->
+  <div class="product">
+    <div class="container">
+      <div class="product-top">
+        <div classs="product-one">
+          <% @hits.hit.each do |hit|%>
+          <div class="col-md-3 product-left">
+            <div class="product-main simpleCart_shelfItem">
+              <a href="product/<%= hit.id %>" class="mask">
+                <%= image_tag(hit.img, alt: "", class: "img-responsive zoom-img") %>
+              </a>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+>>>>>>> master
