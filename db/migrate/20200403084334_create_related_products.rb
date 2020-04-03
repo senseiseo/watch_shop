@@ -21,3 +21,4 @@ class CreateRelatedProducts < ActiveRecord::Migration[5.2]
              SQL
   end
 end
+  
