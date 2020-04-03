@@ -1,6 +1,6 @@
 class ProductController < ApplicationController
   
-  
+  after_action :register_visit, omly: [:show]
 
   def show
     @product = Product.find(params[:id])
@@ -13,22 +13,22 @@ class ProductController < ApplicationController
  
   def recent_products
     [] if recently.none?
-    Product.where(id :recently)
+    Product.where(id: recently)
   end
 
   def recently
-    session[:viewed_products] || = []
+    session[:viewed_products] ||= []
   end
 
-  def recently_visit 
-    session[:viewed_products] || = []
+  def register_visit 
+    session[:viewed_products] ||= []
     session[:viewed_products] = ([@product.id] + session[:viewed_products]).uniq.take(3)
   end
 
   
   def set_page_options
     set_meta_tags product.slice(:title, :keywords, :description)
-    add_breadcrumb name 'Home', path :root_path, title: 'Home'
+    add_breadcrumb name: 'Home', path: root_path, title: 'Home'
   end
 
 end

@@ -47,11 +47,11 @@
                  </div>
                  <div class="clearfix"></div>
                </div>
-               <h5 class="item_price">$ <%= product.price %></h5>
+               <h5 class="item_price">$ <%= @product.price %></h5>
                <% if @product.old_price %>
                  <del><%= @product.old_price %></del>
                  <% end %>
-                <p><%= product.content %></p>
+                <p><%= @product.content %></p>
                 <div class="available">
                   <ul>
                     <li>Color
@@ -75,8 +75,7 @@
                 </div>
                <ul class="tag-menu">
                  <li><span>CATEGORY</span>
-                   <strong>:<!-- <a href="/category/<%= @product.category.bytitle%>" style="..." >
-                   <%= @product.category.title%></a> -->
+                   <strong>
                    </strong>
                  </li>
                </ul>
