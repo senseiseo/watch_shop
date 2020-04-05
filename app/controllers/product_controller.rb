@@ -28,7 +28,7 @@ class ProductController < ApplicationController
   
   def set_page_options
     set_meta_tags product.slice(:title, :keywords, :description)
-    add_breadcrumb name: 'Home', path: root_path, title: 'Home'
+    add_breadcrumb 'Home', :root_path, title: 'Home'
   end
 
 end
